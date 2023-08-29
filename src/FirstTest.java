@@ -39,7 +39,7 @@ public class FirstTest {
     public void firstTest(){
        waitForElementAndClick(
                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-               "Cannot find click",
+               "Cannot find Search Wikipedia to click",
                5
        );
 
