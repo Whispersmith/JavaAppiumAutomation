@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
     private AppiumDriver driver;
@@ -64,10 +65,9 @@ public class FirstTest {
                 "Cannot find Element Search",
                 5
         );
-        findElement(
-                By.xpath("//*[contains(@text, 'Java')]"),
-                "Cannot find Java",
-                15
+        countElementsById(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "Count of elements is less then 2"
         );
 
         waitForElementAndClick(
@@ -89,6 +89,67 @@ public class FirstTest {
 
     }
 
+    @Test
+    public void thirdTest(){
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find input",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                "Java",
+                "Cannot find Element Search",
+                5
+        );
+
+        countElementsByValue(
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "Java",
+                "Some not title has no word Java"
+        );
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find Cancel button",
+                5
+        );
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find Cancel button",
+                5
+        );
+
+        waitForElementNotPresent(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "X still present in page",
+                15
+        );
+
+
+    }
+    private void countElementsByValue(By by, String expected_text, String error_message ){
+        List<WebElement> elementList = driver.findElements(by);
+        int count = elementList.size();
+        for( int i = 0; i < count; i++){
+            assertElementHasText(by, expected_text, error_message);
+        }
+
+
+    }
+
+    private int countElementsById(By by, String error_message){
+        List<WebElement> elementList = driver.findElements(by);
+        int count = elementList.size();
+        if(count >= 2){
+            System.out.println("The count of elements: "+ count);
+        }else {
+            System.out.println(error_message);
+        }
+        return count;
+
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeOutInSecond){
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSecond);
         wait.withMessage(error_message + "\n");
@@ -106,7 +167,7 @@ public class FirstTest {
         return element;
     }
 
-    private WebElement assertElementHasText(By by, String expected_text, String error_message){
+   private WebElement assertElementHasText(By by, String expected_text, String error_message){
      WebElement element = waitForElementPresent(by, error_message);
      String text = element.getAttribute("text");
      Assert.assertEquals(
@@ -122,12 +183,6 @@ public class FirstTest {
         element.sendKeys(value);
         return element;
     }
-    private  WebElement findElement(By by, String error_message, long timeOutInSecond){
-        WebElement element = waitForElementPresent(by,error_message, timeOutInSecond);
-        element.findElements(by);
-        return element;
-    }
-
 
     private boolean waitForElementNotPresent(By by, String error_message, long timeOutInSecond){
         WebDriverWait wait = new WebDriverWait(driver, timeOutInSecond);
