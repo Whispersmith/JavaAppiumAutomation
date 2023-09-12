@@ -180,7 +180,8 @@ public class WorkPlace {
 //поправить локатор
         swipeUpToFindElement(
                 By.xpath("//*[@resource-id = 'pcs-footer-container-legal']//*[contains(@text, 'View article in browser')]"),
-                "Cannot swipe"
+                "Cannot find the end of the article",
+                20
         );
 
     }
@@ -199,9 +200,16 @@ public class WorkPlace {
         swipeUp(2000);
     }
 
-    protected void swipeUpToFindElement(By by, String error_message){
+    protected void swipeUpToFindElement(By by, String error_message, int max_swipes){
+        int already_swiped = 0;
         while(driver.findElements(by).size() == 0){
+
+            if(already_swiped > max_swipes){
+                waitForElementPresent(by,"Cannot find element by swiping up.\n"+ error_message, 0);
+                return;
+            }
             swipeUpQuick();
+            ++already_swiped;
         }
     }
 
