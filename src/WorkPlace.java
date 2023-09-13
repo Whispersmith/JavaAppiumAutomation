@@ -179,12 +179,14 @@ public class WorkPlace {
         );
 //поправить локатор
         swipeUpToFindElement(
-                By.xpath("//*[@resource-id = 'pcs-footer-container-legal']//*[contains(@text, 'View article in browser')]"),
+                By.xpath("//android.view.View[@content-desc = 'View article in browser']"),
                 "Cannot find the end of the article",
-                20
+                10
         );
 
     }
+
+
 
     protected void swipeUp(int timeOfSwipe){
         TouchAction action =new TouchAction(driver);
@@ -197,12 +199,16 @@ public class WorkPlace {
 
     }
     protected void swipeUpQuick(){
-        swipeUp(2000);
+        swipeUp(200);
     }
 
     protected void swipeUpToFindElement(By by, String error_message, int max_swipes){
         int already_swiped = 0;
+//        int size = driver.findElements(by).size();
+//        System.out.println(size);
+
         while(driver.findElements(by).size() == 0){
+
 
             if(already_swiped > max_swipes){
                 waitForElementPresent(by,"Cannot find element by swiping up.\n"+ error_message, 0);
