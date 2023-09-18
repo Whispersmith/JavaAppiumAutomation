@@ -42,27 +42,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WorkPlace.saveFirstArticleToMyList">
-    <configuration name="FirstTest.secondTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="secondTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirstTest.thirdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="thirdTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.WorkPlace.testCheckSearchArticleInBackground">
     <configuration name="WorkPlace.saveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,21 +53,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkPlace.testCompareArticleTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkPlace.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WorkPlace" />
-      <option name="METHOD_NAME" value="testCompareArticleTitle" />
+      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkPlace.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WorkPlace.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WorkPlace" />
-      <option name="METHOD_NAME" value="testSwipeArticle" />
+      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkPlace.testChangeScreenOrientationOnSearchResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WorkPlace" />
+      <option name="METHOD_NAME" value="testChangeScreenOrientationOnSearchResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WorkPlace.testCheckSearchArticleInBackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WorkPlace" />
+      <option name="METHOD_NAME" value="testCheckSearchArticleInBackground" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,18 +95,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WorkPlace.testCheckSearchArticleInBackground" />
+        <item itemvalue="JUnit.WorkPlace.testChangeScreenOrientationOnSearchResult" />
+        <item itemvalue="JUnit.WorkPlace.testAmountOfEmptySearch" />
+        <item itemvalue="JUnit.WorkPlace.testAmountOfNotEmptySearch" />
         <item itemvalue="JUnit.WorkPlace.saveFirstArticleToMyList" />
-        <item itemvalue="JUnit.WorkPlace.testSwipeArticle" />
-        <item itemvalue="JUnit.FirstTest.thirdTest" />
-        <item itemvalue="JUnit.FirstTest.secondTest" />
-        <item itemvalue="JUnit.WorkPlace.testCompareArticleTitle" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eca7cd8c-2da5-4d8c-91cd-61c55e681c43" name="Changes" comment="" />
+      <changelist id="94da8e44-22df-49f4-831f-2b76ff4a327d" name="Changes" comment="" />
       <created>1692734865107</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
