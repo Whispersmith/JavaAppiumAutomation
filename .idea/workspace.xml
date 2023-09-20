@@ -42,22 +42,12 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WorkPlace.testSaveAndDeleteTwoArticles">
+  <component name="RunManager" selected="JUnit.WorkPlace.testOpenArticleAndCheckTitle">
     <configuration name="WorkPlace.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WorkPlace" />
       <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WorkPlace.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WorkPlace" />
-      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,6 +73,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WorkPlace.testOpenArticleAndCheckTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="WorkPlace" />
+      <option name="METHOD_NAME" value="testOpenArticleAndCheckTitle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WorkPlace.testSaveAndDeleteTwoArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WorkPlace.testOpenArticleAndCheckTitle" />
         <item itemvalue="JUnit.WorkPlace.testSaveAndDeleteTwoArticles" />
         <item itemvalue="JUnit.WorkPlace.testCheckSearchArticleInBackground" />
         <item itemvalue="JUnit.WorkPlace.testChangeScreenOrientationOnSearchResult" />
         <item itemvalue="JUnit.WorkPlace.testAmountOfEmptySearch" />
-        <item itemvalue="JUnit.WorkPlace.testAmountOfNotEmptySearch" />
       </list>
     </recent_temporary>
   </component>

@@ -573,9 +573,40 @@ public class WorkPlace {
                     5
             );
 
-
         }
 
+        @Test
+    public void testOpenArticleAndCheckTitle(){
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/fragment_onboarding_skip_button"),
+                "Cannot find Skip",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find input",
+                5
+        );
+        String search_line = "Java";
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                search_line,
+                "Cannot type "+search_line+" to the search line",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id = 'org.wikipedia:id/search_results_display']//*[@text = 'Java (programming language)']"),
+                "Cannot find text Java (programming language)",
+                5
+        );
+        assertElementPresent(
+                By.xpath("//*[@text = 'Java (programming language)']"),
+                        "Cannot find title"
+        );
+
+
+    }
 
     protected void swipeUp(int timeOfSwipe){
         TouchAction action =new TouchAction(driver);
@@ -677,6 +708,13 @@ public class WorkPlace {
             String default_message = "'An element '" + by.toString() + "'supposed to not present'";
             throw new AssertionError(default_message + " " + error_message);
 
+        }
+    }
+    private void assertElementPresent(By by, String error_message){
+        int amount_of_elements = getAmountOfElements(by);
+        if(amount_of_elements == 0){
+            String default_message = "'An element '" + by.toString() + "'supposed to not present'";
+            throw new AssertionError(default_message + " " + error_message);
         }
     }
     private String waitForElementAndAttribute(By by, String attribute, String error_message, long timeOutInSeconds){
