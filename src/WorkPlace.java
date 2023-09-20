@@ -439,6 +439,143 @@ public class WorkPlace {
 
     }
 
+    @Test
+    public void testSaveAndDeleteTwoArticles(){
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/fragment_onboarding_skip_button"),
+                    "Cannot find Skip",
+                    5
+            );
+
+            waitForElementAndClick(
+                    By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                    "Cannot find input",
+                    5
+            );
+            String word_for_search = "Java";
+
+            waitForElementAndSendKeys(
+                    By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                    word_for_search,
+                    "Cannot find Element Search",
+                    5
+            );
+            String first_article = "//*[@resource-id = 'org.wikipedia:id/search_results_display']//*[@text = 'Object-oriented programming language']";
+            waitForElementAndClick(
+                    By.xpath(first_article),
+                    "Cannot find first article",
+                    5
+            );
+            waitForElementPresent(
+                    By.id("pcs-edit-section-title-description"),
+                    "Cannot find article title",
+                    5
+            );
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/page_save"),
+                    "Cannot find Save",
+                    5
+            );
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/snackbar_action"),
+                    "Cannot find button",
+                    5
+            );
+
+            String name_of_folder = "Learning programming";
+            waitForElementAndSendKeys(
+                    By.id("org.wikipedia:id/text_input"),
+                    name_of_folder,
+                    "Cannot put the text into articles folder input",
+                    5
+            );
+            waitForElementAndClick(
+                    By.xpath("//*[@text = 'OK']"),
+                    "Cannot press the OK button",
+                    5
+            );
+            waitForElementAndClick(
+                    By.xpath("//android.widget.ImageButton[@content-desc= 'Navigate up']"),
+                    "Cannot click to Back button",
+                    5
+            );
+            String second_article = "//*[@resource-id = 'org.wikipedia:id/search_results_display']//*[@text = 'JavaScript']";
+            waitForElementAndClick(
+                    By.xpath(second_article),
+                    "Cannot find first article",
+                    5
+            );
+            waitForElementPresent(
+                    By.xpath("//android.view.View[@content-desc= 'JavaScript']"),
+                    "Cannot find article title",
+                    5
+            );
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/page_save"),
+                    "Cannot find the button Save",
+                    5
+            );
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/snackbar_action"),
+                    "Cannot find the action button",
+                    5
+            );
+            waitForElementAndClick(
+                    By.xpath("//*[@resource-id = 'org.wikipedia:id/list_of_lists']//*[contains(@text,'"+name_of_folder+"')]"),
+                    "Cannot put article to the folder",
+                    5
+            );
+           waitForElementAndClick(
+                    By.xpath("//android.widget.ImageButton[@content-desc= 'Navigate up']"),
+                    "Cannot click to Back button",
+                    5
+            );
+           waitForElementAndClick(
+                    By.xpath("//android.widget.ImageButton[@content-desc= 'Navigate up']"),
+                    "Cannot click to Back button",
+                    5
+            );
+
+            waitForElementAndClick(
+                    By.xpath("//android.widget.FrameLayout[@content-desc= 'Saved']"),
+                    "Cannot find Saved in bottom bar",
+                    5
+            );
+            waitForElementAndClick(
+                    By.id("org.wikipedia:id/negativeButton"),
+                    "Cannot close the dialog by Not now",
+                    5
+            );
+
+            waitForElementAndClick(
+                    By.xpath("//*[@resource-id = 'org.wikipedia:id/item_title_container']//*[@text = '"+name_of_folder+"']"),
+                    "Cannot find new saved article",
+                    5
+            );
+            swipeElementToLeft(
+                    By.xpath("//*[@text = 'Java (programming language)']"),
+                    "Cannot find Element Java (programming language) to swipe"
+            );
+
+            waitForElementPresent(
+                    By.xpath("//*[@text = 'JavaScript']"),
+                    "Article was not delete",
+                    5
+            );
+            waitForElementAndClick(
+                    By.xpath("//*[@text = 'JavaScript']"),
+                    "Cannot tap to item n the List",
+                    5
+            );
+            waitForElementPresent(
+                    By.xpath("//android.view.View[@content-desc= 'JavaScript']"),
+                    "Cannot find article title",
+                    5
+            );
+
+
+        }
+
 
     protected void swipeUp(int timeOfSwipe){
         TouchAction action =new TouchAction(driver);
