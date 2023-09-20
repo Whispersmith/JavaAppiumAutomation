@@ -32,11 +32,13 @@ public class WorkPlace {
         capabilities.setCapability("app","C:/Users/User/Documents/GitHub/JavaAppiumAutomation/apks/org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
     }
 
     @After
     public void tearDown(){
         driver.quit();
+        driver.rotate(ScreenOrientation.PORTRAIT);
     }
 
     @Test
@@ -379,6 +381,7 @@ public class WorkPlace {
                 15
         );
         driver.rotate(ScreenOrientation.LANDSCAPE);
+
         String title_after_rotation = waitForElementAndAttribute(
                 By.id("pcs-edit-section-title-description"),
                 "text",

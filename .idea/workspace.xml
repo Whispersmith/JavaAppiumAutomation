@@ -42,12 +42,12 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.WorkPlace.testOpenArticleAndCheckTitle">
-    <configuration name="WorkPlace.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WorkPlace.testChangeScreenOrientationOnSearchResult">
+    <configuration name="WorkPlace.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="WorkPlace" />
-      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
+      <option name="METHOD_NAME" value="firstTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WorkPlace.testChangeScreenOrientationOnSearchResult" />
+        <item itemvalue="JUnit.WorkPlace.firstTest" />
+        <item itemvalue="JUnit.WorkPlace.testCheckSearchArticleInBackground" />
         <item itemvalue="JUnit.WorkPlace.testOpenArticleAndCheckTitle" />
         <item itemvalue="JUnit.WorkPlace.testSaveAndDeleteTwoArticles" />
-        <item itemvalue="JUnit.WorkPlace.testCheckSearchArticleInBackground" />
-        <item itemvalue="JUnit.WorkPlace.testChangeScreenOrientationOnSearchResult" />
-        <item itemvalue="JUnit.WorkPlace.testAmountOfEmptySearch" />
       </list>
     </recent_temporary>
   </component>
