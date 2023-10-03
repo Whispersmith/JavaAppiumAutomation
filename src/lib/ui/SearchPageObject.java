@@ -8,6 +8,8 @@ public class SearchPageObject extends MainPageObject{
             SEARCH_INIT_ELEMENT = "//*[contains(@text, 'Search Wikipedia')]",
             SEARCH_INPUT = "//*[contains(@text, 'Search Wikipedia')]",
             SEARCH_RESULT_BY_STRING_TPL = "//*[@resource-id = 'org.wikipedia:id/search_results_display']//*[@text = '{SUBSTRING}']",
+
+            SEARCH_RESULT_BY_TWO_STRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_title' and @text = '{SUBSTRING1}']/../*[@resource-id = 'org.wikipedia:id/page_list_item_description' and @text = '{SUBSTRING2}']",
             SEARCH_SKIP_BUTTON = "org.wikipedia:id/fragment_onboarding_skip_button",
             SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
             SEARCH_RESULT_ELEMENT = "//*[@resource-id = 'org.wikipedia:id/fragment_search_results']//*[@resource-id = 'org.wikipedia:id/page_list_item_title']",
@@ -22,6 +24,11 @@ public class SearchPageObject extends MainPageObject{
     private static String getResultSearchElement(String substring){
         return SEARCH_RESULT_BY_STRING_TPL.replace("{SUBSTRING}",substring);
     }
+
+    private static String getResultFromSearchList(String title, String description){
+        return SEARCH_RESULT_BY_TWO_STRING_TPL.replace("{SUBSTRING1}",title).replace("{SUBSTRING2}",description);
+    }
+
     /* TEMPLATE METHODS */
 
     public void initSearchInput (){
@@ -44,6 +51,11 @@ public class SearchPageObject extends MainPageObject{
     public void clickByArticleWithSubstring(String substring){
         String search_result_xpath = getResultSearchElement(substring);
         this.waitForElementAndClick(By.xpath(search_result_xpath), "Cannot find and click search result with substring " + substring, 10);
+    }
+
+    public void waitForElementByTitleAndDescription(String title, String description){
+        String search_result = getResultFromSearchList(title,description);
+        this.waitForElementPresent(By.xpath(search_result),"Cannot find article with title " +title+ " and with description " +description , 10);
     }
 
     @Override
