@@ -5,13 +5,14 @@ import lib.ui.ArticlePageObject;
 import lib.ui.MyListsPageObjects;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 
 public class MyListsTests extends CoreTestCase {
     @Test
     public void testSaveFirstArticleToMyList(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -41,7 +42,7 @@ public class MyListsTests extends CoreTestCase {
     @Test
     public void testSaveAndDeleteTwoArticles(){
 
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();

@@ -4,6 +4,7 @@ import lib.CoreTestCase;
 import lib.ui.ArticlePageObject;
 import lib.ui.MainPageObject;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -12,7 +13,7 @@ public class ArticleTests extends CoreTestCase {
     @Test
 //ищем поле ввода, пишем Java, нажимаем на выдачу в поиске, проеряем что выдалось на экране с ошибкой
     public void testCompareArticleTitle(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -30,7 +31,7 @@ public class ArticleTests extends CoreTestCase {
     }
     @Test
     public void testSwipeArticle(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -53,7 +54,7 @@ public class ArticleTests extends CoreTestCase {
 
     @Test
     public void testOpenArticleAndCheckTitle(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();

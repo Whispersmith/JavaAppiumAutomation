@@ -3,17 +3,16 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class SearchPageObject extends MainPageObject{
-    private static final String
-            SEARCH_INIT_ELEMENT = "//*[contains(@text, 'Search Wikipedia')]",
-            SEARCH_INPUT = "//*[contains(@text, 'Search Wikipedia')]",
-            SEARCH_RESULT_BY_STRING_TPL = "//*[@resource-id = 'org.wikipedia:id/search_results_display']//*[@text = '{SUBSTRING}']",
-
-            SEARCH_RESULT_BY_TWO_STRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_title' and @text = '{SUBSTRING1}']/../*[@resource-id = 'org.wikipedia:id/page_list_item_description' and @text = '{SUBSTRING2}']",
-            SEARCH_SKIP_BUTTON = "org.wikipedia:id/fragment_onboarding_skip_button",
-            SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
-            SEARCH_RESULT_ELEMENT = "//*[@resource-id = 'org.wikipedia:id/fragment_search_results']//*[@resource-id = 'org.wikipedia:id/page_list_item_title']",
-            SEARCH_EMPTY_RESULT_LABEL = "//*[contains(@text, 'No results')]";
+abstract public class SearchPageObject extends MainPageObject{
+    protected static String
+            SEARCH_INIT_ELEMENT,
+            SEARCH_INPUT,
+            SEARCH_RESULT_BY_STRING_TPL,
+            SEARCH_RESULT_BY_TWO_STRING_TPL,
+            SEARCH_SKIP_BUTTON ,
+            SEARCH_CANCEL_BUTTON,
+            SEARCH_RESULT_ELEMENT,
+            SEARCH_EMPTY_RESULT_LABEL;
 
 
     public SearchPageObject(AppiumDriver driver){

@@ -2,6 +2,7 @@ package tests;
 
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
@@ -30,7 +31,7 @@ public class SearchTests extends CoreTestCase {
                 15
         );*/
 
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -41,7 +42,7 @@ public class SearchTests extends CoreTestCase {
     @Test
 //ищем поле ввода, пишем Java, очищаем ввод и проверяем что крестика нет на экране(что поиск закрыт)
     public void testCancelSearch(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
 
@@ -59,7 +60,7 @@ public class SearchTests extends CoreTestCase {
     @Test
     public void testAmountOfNotEmptySearch(){
 
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -75,7 +76,7 @@ public class SearchTests extends CoreTestCase {
 
     @Test
     public void testAmountOfEmptySearch() {
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
@@ -88,7 +89,7 @@ public class SearchTests extends CoreTestCase {
 
     @Test
     public void testCheckTitleAndDescription(){
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
 
         searchPageObject.setSearchSkipButton();
         searchPageObject.initSearchInput();
