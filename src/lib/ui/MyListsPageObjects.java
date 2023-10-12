@@ -3,11 +3,11 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class MyListsPageObjects extends MainPageObject{
-    public static final String
-        NOT_NOW_BUTTON = "org.wikipedia:id/negativeButton",
-        FOLDER_BY_NAME_TPL = "//*[@resource-id = 'org.wikipedia:id/item_title_container']//*[@text = '{FOLDER_NAME}']",
-        ARTICLE_TITLE_TPL = "//*[@text = '{TITLE}']";
+abstract public class MyListsPageObjects extends MainPageObject{
+    protected static String
+        NOT_NOW_BUTTON ,
+        FOLDER_BY_NAME_TPL ,
+        ARTICLE_TITLE_TPL ;
 
     public MyListsPageObjects(AppiumDriver driver){
         super(driver);

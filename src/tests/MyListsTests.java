@@ -5,6 +5,9 @@ import lib.ui.ArticlePageObject;
 import lib.ui.MyListsPageObjects;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.MyListsPageObjectFactory;
+import lib.ui.factories.NavigationUIFactory;
 import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
@@ -19,19 +22,19 @@ public class MyListsTests extends CoreTestCase {
         searchPageObject.typeSearchLine("Java");
         searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleArticle();
         String article_title = ArticlePageObject.getArticleTitle();
         String name_of_folder = "Learning programming";
 
         ArticlePageObject.addArticleToMyList(name_of_folder);
-        NavigationUI NavigationUI = new NavigationUI(driver);
+        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.navigateUpFromArticle();
         NavigationUI.navigateUpFromArticle();
         NavigationUI.goToSavedArticles();
 
 
-        MyListsPageObjects MyListsPageObject = new MyListsPageObjects(driver);
+        MyListsPageObjects MyListsPageObject = MyListsPageObjectFactory.get(driver);
         MyListsPageObject.clickNotNow();
         MyListsPageObject.openFolderByName(name_of_folder);
         //hardcode потому что локатор неправильный и текста там не будет для заголовка
@@ -51,13 +54,13 @@ public class MyListsTests extends CoreTestCase {
         String first_article = "Object-oriented programming language";
         searchPageObject.clickByArticleWithSubstring(first_article);
 
-        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleArticle();
 
         String name_of_folder = "Learning programming";
 
         ArticlePageObject.addArticleToMyList(name_of_folder);
-        NavigationUI NavigationUI = new NavigationUI(driver);
+        NavigationUI NavigationUI =NavigationUIFactory.get(driver);
         NavigationUI.navigateUpFromArticle();
 
         String second_article = "JavaScript";
@@ -65,7 +68,7 @@ public class MyListsTests extends CoreTestCase {
         ArticlePageObject.waitForTitleArticle();
         ArticlePageObject.addArticleToMyOldList();
 
-        MyListsPageObjects MyListPageObjects = new MyListsPageObjects(driver);
+        MyListsPageObjects MyListPageObjects = MyListsPageObjectFactory.get(driver);
         MyListPageObjects.openFolderByName(name_of_folder);
 
         NavigationUI.navigateUpFromArticle();

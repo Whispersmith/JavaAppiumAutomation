@@ -4,14 +4,14 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ArticlePageObject extends  MainPageObject{
-    private static final String
-        TITLE = "pcs-edit-section-title-description",
-        FOOTER_ELEMENT = "//android.view.View[@content-desc = 'View article in browser']",
-        SAVE_BUTTON = "org.wikipedia:id/page_save",
-        ADD_TO_LIST_BUTTON = "org.wikipedia:id/snackbar_action",
-        MY_LIST_NAME_INPUT = "org.wikipedia:id/text_input",
-        OK_BUTTON = "//*[@text = 'OK']";
+abstract public class ArticlePageObject extends  MainPageObject{
+    protected static String
+        TITLE,
+        FOOTER_ELEMENT ,
+        SAVE_BUTTON ,
+        ADD_TO_LIST_BUTTON ,
+        MY_LIST_NAME_INPUT ,
+        OK_BUTTON ;
 
 
     public ArticlePageObject(AppiumDriver driver){

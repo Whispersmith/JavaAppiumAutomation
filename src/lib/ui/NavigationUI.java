@@ -3,10 +3,10 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class NavigationUI extends MainPageObject{
-    private static final String
-        NAVIGATE_UP_BUTTON = "//android.widget.ImageButton[@content-desc= 'Navigate up']",
-        SAVED_ARTICLES = "//android.widget.FrameLayout[@content-desc= 'Saved']";
+abstract public class NavigationUI extends MainPageObject{
+    protected static String
+        NAVIGATE_UP_BUTTON,
+        SAVED_ARTICLES;
 
     public NavigationUI(AppiumDriver driver){
         super(driver);
